@@ -1,0 +1,1 @@
+/home/rlab/SO_ROS2/install/so_arm_description/share/so_arm_description/urdf/so101_new_calib.urdf

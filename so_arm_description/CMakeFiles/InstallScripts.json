@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/rlab/SO_ROS2/build/so_arm_description/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
