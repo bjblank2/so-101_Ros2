@@ -1,0 +1,51 @@
+leader_arm:
+  ros__parameters:
+    port: "/dev/ttyACM0"  # Leader arm serial port
+    # Mapping from joint name to [motor_id, model]
+    motors:
+      Rotation: ["1", "sts3215"]
+      Pitch: ["2", "sts3215"]
+      Elbow: ["3", "sts3215"]
+      Wrist_Pitch: ["4", "sts3215"]
+      Wrist_Roll: ["5", "sts3215"]
+      Jaw: ["6", "sts3215"]
+    publish_rate: 10.0 # Hz
+    # Optional calibration dictionary
+    # calibration:
+    #   motor_names: ["Rotation", "Pitch", "Elbow", "Wrist_Pitch", "Wrist_Roll", "Jaw"]
+    #   calib_mode: ["DEGREE", "DEGREE", "DEGREE", "DEGREE", "DEGREE", "DEGREE"]
+    #   drive_mode: [0, 0, 0, 0, 0, 0]
+    #   homing_offset: [2048, 2048, 2048, 2048, 2048, 2048]
+
+follower_arm:
+  ros__parameters:
+    port: "/dev/ttyACM1"  # Follower arm serial port (different from leader)
+    # Mapping from joint name to [motor_id, model]
+    motors:
+      Rotation: ["1", "sts3215"]
+      Pitch: ["2", "sts3215"]
+      Elbow: ["3", "sts3215"]
+      Wrist_Pitch: ["4", "sts3215"]
+      Wrist_Roll: ["5", "sts3215"]
+      Jaw: ["6", "sts3215"]
+    publish_rate: 10.0 # Hz
+    scaling_factor: 1.0  # Scale leader movements (1.0 = same size, 0.5 = half size, etc.)
+    enable_teleop: true  # Enable/disable teleoperation
+    use_calibration: true  # Enable/disable calibration offsets
+    # Optional calibration dictionary
+    # calibration:
+    #   motor_names: ["Rotation", "Pitch", "Elbow", "Wrist_Pitch", "Wrist_Roll", "Jaw"]
+    #   calib_mode: ["DEGREE", "DEGREE", "DEGREE", "DEGREE", "DEGREE", "DEGREE"]
+    #   drive_mode: [0, 0, 0, 0, 0, 0]
+    #   homing_offset: [2048, 2048, 2048, 2048, 2048, 2048]
+
+calibration:
+  ros__parameters:
+    # Home position for calibration (in degrees)
+    home_positions: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    # Test positions for calibration verification (in degrees)
+    test_positions: [0.0, 30.0, 60.0, 0.0, 0.0, 0.0]
+    # Tolerance for position matching (in degrees)
+    position_tolerance: 2.0
+    # Maximum allowed offset (in degrees)
+    max_offset: 30.0 

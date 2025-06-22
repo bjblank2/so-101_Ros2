@@ -1,0 +1,8 @@
+# Request
+string motor_name   # Name of the motor as defined in the config yaml
+string data_name    # Data field to write, e.g., "Goal_Position", "Torque_Enable"
+int32 value         # The value to write to the servo
+---
+# Response
+bool success        # True if the write was successful
+string message      # Optional message 

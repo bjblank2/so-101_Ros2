@@ -1,0 +1,26 @@
+leader_arm:
+  ros__parameters:
+    port: "/dev/ttyACM0"
+    motors:
+      Rotation: [1, "sts3215"]
+      Pitch: [2, "sts3215"]
+      Elbow: [3, "sts3215"]
+      Wrist_Pitch: [4, "sts3215"]
+      Wrist_Roll: [5, "sts3215"]
+      Jaw: [6, "sts3215"]
+    publish_rate: 10.0
+
+follower_arm:
+  ros__parameters:
+    port: "/dev/ttyACM1"
+    motors:
+      Rotation: [1, "sts3215"]
+      Pitch: [2, "sts3215"]
+      Elbow: [3, "sts3215"]
+      Wrist_Pitch: [4, "sts3215"]
+      Wrist_Roll: [5, "sts3215"]
+      Jaw: [6, "sts3215"]
+    publish_rate: 10.0
+    scaling_factor: 1.0
+    enable_teleop: true
+    use_calibration: true 

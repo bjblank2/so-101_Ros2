@@ -1,0 +1,22 @@
+feetech_hardware_interface:
+  ros__parameters:
+    port: "/dev/ttyACM0"
+    # Mapping from joint name to [motor_id, model]
+    # Updated to match the new URDF joint names
+    motors:
+      Rotation: [1, "sts3215"]
+      Pitch: [2, "sts3215"]
+      Elbow: [3, "sts3215"]
+      Wrist_Pitch: [4, "sts3215"]
+      Wrist_Roll: [5, "sts3215"]
+      Jaw: [6, "sts3215"]
+    publish_rate: 10.0 # Hz
+    # Optional calibration dictionary
+    # calibration:
+    #   motor_names: ["Rotation", "Pitch", "Elbow", "Wrist_Pitch", "Wrist_Roll", "Jaw"]
+    #   # DEGREE for revolute, LINEAR for prismatic/gripper
+    #   calib_mode: ["DEGREE", "DEGREE", "DEGREE", "DEGREE", "DEGREE", "DEGREE"]
+    #   # 0 for non-inverted, 1 for inverted
+    #   drive_mode: [0, 0, 0, 0, 0, 0]
+    #   # Homing offset in motor steps
+    #   homing_offset: [2048, 2048, 2048, 2048, 2048, 2048] 

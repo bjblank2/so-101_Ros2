@@ -1,0 +1,8 @@
+# Request
+string motor_name   # Name of the motor as defined in the config yaml
+string data_name    # Data field to read, e.g., "Present_Position", "Present_Speed"
+---
+# Response
+bool success        # True if the read was successful
+string message      # Optional message
+int32 value         # The value read from the servo 
